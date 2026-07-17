@@ -1,0 +1,17 @@
+.env
+.env.*
+!.env.example
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+htmlcov/
+*.log
+
+lora-vue-frontend/node_modules/
+lora-vue-frontend/dist/
+
+.DS_Store
+.idea/
+.vscode/

@@ -1,0 +1,21 @@
+[Unit]
+Description=LoRa MQTT web monitor
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=lora
+Group=lora
+WorkingDirectory=/opt/lora-mqtt
+EnvironmentFile=/etc/lora-monitor.env
+ExecStart=/opt/lora-mqtt/.venv/bin/waitress-serve --host=127.0.0.1 --port=5000 app:app
+Restart=on-failure
+RestartSec=5
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+
+[Install]
+WantedBy=multi-user.target

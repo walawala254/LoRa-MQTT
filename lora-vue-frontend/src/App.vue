@@ -1,20 +1,7 @@
 <template>
-  <div id="app">
-    <RequestIP />
-  </div>
+  <GatewayDashboard />
 </template>
 
-<script>
-import RequestIP from './components/RequestIP.vue'
-
-export default {
-  name: 'App',
-  components: {
-    RequestIP
-  }
-}
+<script setup>
+import GatewayDashboard from './components/GatewayDashboard.vue'
 </script>
-
-<style>
-/* Add your custom styles here */
-</style>
