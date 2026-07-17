@@ -1,0 +1,7 @@
+# The monitor can read every gateway status topic.
+user monitor
+topic read lora/gateways/+/status
+
+# A gateway's broker username must match its GATEWAY_ID. It can only publish
+# its own retained status and cannot subscribe to other gateway messages.
+pattern write lora/gateways/%u/status

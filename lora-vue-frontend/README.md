@@ -1,24 +1,15 @@
-# lora-vue-frontend
+# LoRa Gateway Monitor frontend
 
-## Project setup
-```
-npm install
-```
+Vue 3 and Vite frontend for the LoRa MQTT Gateway Monitor. The complete setup,
+security model, deployment instructions, and API contract are documented in
+the repository root `README.md`.
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
+```bash
+npm ci
+npm run dev       # development server; proxies /api to Flask on port 5000
 npm run lint
+npm run build     # production output in dist/
+npm audit --audit-level=high
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+Node.js 22.12 or newer is required. Node.js 24 LTS is recommended.

@@ -1,0 +1,21 @@
+[Unit]
+Description=LoRa gateway MQTT status publisher
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=lora
+Group=lora
+WorkingDirectory=/opt/lora-mqtt
+EnvironmentFile=/etc/lora-gateway.env
+ExecStart=/opt/lora-mqtt/.venv/bin/python /opt/lora-mqtt/mqtt_client.py
+Restart=on-failure
+RestartSec=5
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+
+[Install]
+WantedBy=multi-user.target
